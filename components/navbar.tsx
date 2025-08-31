@@ -29,7 +29,7 @@ export default function Navbar() {
           {/* Logo and NGO Name */}
           <div className="flex items-center space-x-3">
             <div className="bg-saffron-500 p-2 rounded-full">
-              <Flower2 className="h-6 w-6 text-white" />
+              <img src="https://www.vedicngo.org/logo.jpg" alt="" className="h-10 w-10 object-contain text-white" />
             </div>
             <div className="text-xl font-bold text-saffron-700">{t("app.name")}</div>
           </div>
