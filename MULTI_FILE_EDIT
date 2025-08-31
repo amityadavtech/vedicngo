@@ -1,6 +1,5 @@
 // app/admin/dashboard/page.tsx
 import { useState } from "react";
-import { toast } from "react-toastify";
 import { FileText } from 'lucide-react';
 import { supabase } from "@/lib/supabase";
 import { useTranslation } from "react-i18next";
