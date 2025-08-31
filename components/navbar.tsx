@@ -31,7 +31,7 @@ export default function Navbar() {
             <div className="bg-saffron-500 p-2 rounded-full">
               <img src="https://www.vedicngo.org/logo.jpg" alt="" className="h-10 w-10 object-contain text-white" />
             </div>
-            <div className="text-xl font-bold text-saffron-700">{t("app.name")}</div>
+            <div className="text-xl font-bold text-saffron-700">रामायण वैदिक एजुकेशन फाउंडेशन</div>
           </div>
 
           {/* Desktop Menu */}
