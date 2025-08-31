@@ -52,7 +52,7 @@ export default function HeroSection() {
           <div className="relative">
             <div className="relative w-full h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image src="/hero.png" alt="" fill className="object-cover" />
-              <Image src="/guru-portrait-saffron-robe.png" alt="गुरुजी का चित्र" fill className="object-cover" />
+              
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               {/* Om Image */}
               <div className="absolute top-4 left-4 bg-white/90 rounded-full p-3 shadow-lg">
