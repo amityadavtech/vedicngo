@@ -1,7 +1,5 @@
 "use client"
-
 import type React from "react"
-
 import { useState } from "react"
 import { Phone, Mail, MapPin, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -26,17 +24,13 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-
     try {
       const { error } = await supabase.from("contact_submissions").insert([formData])
-
       if (error) throw error
-
       toast({
         title: t("contact.toast.ok.title"),
         description: t("contact.toast.ok.desc"),
       })
-
       setFormData({
         subh_naam: "",
         vishay: "",
@@ -71,7 +65,6 @@ export default function ContactSection() {
           </div>
           <p className="text-xl text-gray-600">{t("contact.sub")}</p>
         </div>
-
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <Card className="shadow-xl border-0">
             <CardContent className="p-8">
@@ -88,7 +81,6 @@ export default function ContactSection() {
                     className="border-gray-300 focus:border-saffron-500"
                   />
                 </div>
-
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">{t("contact.subject")} *</label>
                   <Input
@@ -100,7 +92,6 @@ export default function ContactSection() {
                     className="border-gray-300 focus:border-saffron-500"
                   />
                 </div>
-
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">{t("contact.phone")} *</label>
                   <Input
@@ -112,7 +103,6 @@ export default function ContactSection() {
                     className="border-gray-300 focus:border-saffron-500"
                   />
                 </div>
-
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">{t("contact.message")} *</label>
                   <Textarea
@@ -125,24 +115,22 @@ export default function ContactSection() {
                     className="border-gray-300 focus:border-saffron-500"
                   />
                 </div>
-
                 <Button
                   type="submit"
                   disabled={loading}
                   className="w-full bg-saffron-600 hover:bg-saffron-700 text-white py-3"
                 >
                   {loading ? (
-                    "..."
+                    t("contact.btn.sending") // new key for "भेजा जा रहा है..." or "Sending..."
                   ) : (
                     <>
-                      <Send className="h-5 w-5 mr-2" /> {t("contact.btn.send")}
+                      <Send className="h-5 w-5 mr-2" />{t("contact.btn.send")}
                     </>
                   )}
                 </Button>
               </form>
             </CardContent>
           </Card>
-
           <div className="space-y-8">
             <Card className="shadow-xl border-0">
               <CardContent className="p-8">
@@ -153,62 +141,59 @@ export default function ContactSection() {
                       <Phone className="h-6 w-6 text-saffron-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">फोन</h4>
-                      <p className="text-gray-600">+91 98765 43210</p>
-                      <p className="text-gray-600">+91 87654 32109</p>
+                      <h4 className="font-semibold text-gray-800">{t("contact.phoneLabel")}</h4>
+                      <p className="text-gray-600">+91 7307214280</p>
+                      {/* <p className="text-gray-600">+91 87654 32109</p> */}
                     </div>
                   </div>
-
                   <div className="flex items-start space-x-4">
                     <div className="bg-saffron-100 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-saffron-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">ईमेल</h4>
-                      <p className="text-gray-600">info@vedic-ngo.org</p>
-                      <p className="text-gray-600">contact@vedic-ngo.org</p>
+                      <h4 className="font-semibold text-gray-800">{t("contact.emailLabel")}</h4>
+                      <p className="text-gray-600">ramayanvedicngo@gmail.com</p>
+                      {/* <p className="text-gray-600">contact@vedic-ngo.org</p> */}
                     </div>
                   </div>
-
                   <div className="flex items-start space-x-4">
                     <div className="bg-saffron-100 p-3 rounded-full">
                       <MapPin className="h-6 w-6 text-saffron-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">पता</h4>
+                      <h4 className="font-semibold text-gray-800">{t("contact.addressLabel")}</h4>
                       <p className="text-gray-600">
-                        वैदिक शिक्षा संस्थान
+                        रामायण भवन
                         <br />
-                        123, धर्म मार्ग
+                        रामायण वैदिक एजुकेशन फाउंडेशन
                         <br />
-                        नई दिल्ली - 110001
+                        उत्तर प्रदेश राज्य औद्योगिक विकास प्राधिकरण के सामने , नक्षत्र गार्डन, गोला रोड
+                        <br />
+                        लखीमपुर खीरी २६२७०१
                       </p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
-
             <Card className="shadow-xl border-0 bg-gradient-to-r from-saffron-500 to-orange-500 text-white">
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold mb-4">{t("contact.office")}</h3>
                 <div className="space-y-2">
-                  <p>{t("contact.office.mf")}</p>
-                  <p>{t("contact.office.sa")}</p>
-                  <p>{t("contact.office.su")}</p>
+                  <p>सोमवार - शनिवार: प्रातः04:00 बजे से 4:00 बजे तक</p>
+                  {/* <p>शनिवार: 9:00 AM - 2:00 PM</p> */}
+                  <p>रविवार: बंद</p>
                 </div>
               </CardContent>
             </Card>
           </div>
         </div>
-
         {/* Google Maps Section */}
         <div className="mt-16">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-gray-800 mb-4">{t("contact.location")}</h3>
             <p className="text-lg text-gray-600">{t("contact.visit")}</p>
           </div>
-
           <Card className="shadow-xl border-0 overflow-hidden">
             <CardContent className="p-0">
               <div className="relative w-full h-96 md:h-[500px]">
@@ -224,29 +209,30 @@ export default function ContactSection() {
                   className="rounded-lg"
                 />
               </div>
-
               <div className="p-6 bg-gradient-to-r from-saffron-50 to-orange-50">
                 <div className="flex flex-col md:flex-row justify-between items-center">
                   <div className="mb-4 md:mb-0">
                     <h4 className="text-xl font-bold text-gray-800 mb-2">{t("contact.fulladdress")}</h4>
                     <p className="text-gray-700">
-                      वैदिक शिक्षा संस्थान
+                      रामायण भवन
                       <br />
-                      123, धर्म मार्ग
+                      रामायण वैदिक एजुकेशन फाउंडेशन
                       <br />
-                      नई दिल्ली - 110001
+                      उत्तर प्रदेश राज्य औद्योगिक विकास प्राधिकरण के सामने , नक्षत्र गार्डन, गोला रोड
                       <br />
-                      भारत
+                      लखीमपुर खीरी २६२७०१
                     </p>
                   </div>
-
                   <a
-                    href="https://maps.app.goo.gl/5wgsx45uTqcDGTms6?g_st=aw"
+                    href="https://maps.app.goo.gl/5wgsx45uTqcDGTms6"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center"
                   >
-                    <Button className="bg-saffron-600 hover:bg-saffron-700 text-white">{t("contact.openmap")}</Button>
+                    <Button className="bg-saffron-600 hover:bg-saffron-700 text-white">
+                      <MapPin className="h-5 w-5 mr-2" />
+                      {t("contact.openmap")}
+                    </Button>
                   </a>
                 </div>
               </div>
