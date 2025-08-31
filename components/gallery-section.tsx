@@ -11,11 +11,25 @@ export default function GallerySection() {
   const { t } = useLanguage()
 
   const images = [
-    { src: "/vedic-education-event.png", title: t("gallery.img1") },
-    { src: "/ramayan-paath-sabha.png", title: t("gallery.img2") },
-    { src: "/yoga-meditation-session.png", title: t("gallery.img3") },
-    { src: "/sanskrit-class.png", title: t("gallery.img4") },
-    { src: "/religious-festival.png", title: t("gallery.img5") },
+    { src: "/g1.jpg", title: t("gallery.img1") },
+    { src: "/g2.jpg", title: t("gallery.img2") },
+    { src: "/g3.jpg", title: t("gallery.img3") },
+    { src: "/g4.jpg", title: t("gallery.img4") },
+    { src: "/g5.jpg", title: t("gallery.img5") },
+    { src: "/g6.jpg", title: t("gallery.img6") },
+    { src: "/g7.jpg", title: t("gallery.img7") },
+    { src: "/g8.jpg", title: t("gallery.img8") },
+    { src: "/g9.jpg", title: t("gallery.img9") },
+    { src: "/g10.jpg", title: t("gallery.img10") },
+    { src: "/g11.jpg", title: t("gallery.img11") },
+    { src: "/g12.jpg", title: t("gallery.img12") },
+    { src: "/g13.jpg", title: t("gallery.img13") },
+    { src: "/g14.jpg", title: t("gallery.img14") },
+    { src: "/g15.jpg", title: t("gallery.img15") },
+    { src: "/g16.jpg", title: t("gallery.img16") },
+    { src: "/g17.jpg", title: t("gallery.img17") },
+    { src: "/g18.jpg", title: t("gallery.img18") },
+    { src: "https://i.ibb.co/gFcSqBC4/g19.jpg", title: t("gallery.img19") },
   ]
 
   const nextImage = () => setCurrentImage((prev) => (prev + 1) % images.length)
