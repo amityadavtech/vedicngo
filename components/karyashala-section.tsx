@@ -18,6 +18,12 @@ export default function KaryashalaSection() {
     { title: t("work.yoga.title"), description: t("work.yoga.desc") },
     { title: t("work.ayurveda.title"), description: t("work.ayurveda.desc") },
     { title: t("work.sanskar.title"), description: t("work.sanskar.desc") },
+    { title: t("work.astrology.title"), description: t("work.astrology.desc") },
+    { title: t("work.vastu.title"), description: t("work.vastu.desc") },
+    { title: t("work.music.title"), description: t("work.music.desc") },
+    { title: t("work.art.title"), description: t("work.art.desc") },
+    { title: t("work.history.title"), description: t("work.history.desc") },
+    { title: t("work.science.title"), description: t("work.science.desc") },
   ]
 
   return (
