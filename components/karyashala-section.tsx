@@ -11,19 +11,22 @@ export default function KaryashalaSection() {
   const { t } = useLanguage()
 
   const subjects = [
-    { title: t("work.gita.title"), description: t("work.gita.desc") },
-    { title: t("work.ramayan.title"), description: t("work.ramayan.desc") },
-    { title: t("work.ved.title"), description: t("work.ved.desc") },
-    { title: t("work.sanskrit.title"), description: t("work.sanskrit.desc") },
-    { title: t("work.yoga.title"), description: t("work.yoga.desc") },
-    { title: t("work.ayurveda.title"), description: t("work.ayurveda.desc") },
-    { title: t("work.sanskar.title"), description: t("work.sanskar.desc") },
-    { title: t("work.astrology.title"), description: t("work.astrology.desc") },
-    { title: t("work.vastu.title"), description: t("work.vastu.desc") },
-    { title: t("work.music.title"), description: t("work.music.desc") },
-    { title: t("work.art.title"), description: t("work.art.desc") },
-    { title: t("work.history.title"), description: t("work.history.desc") },
-    { title: t("work.science.title"), description: t("work.science.desc") },
+    const subjects = [
+  { title: t("work.gita.title"), description: t("work.gita.desc"), image: "/k1.png" },
+  { title: t("work.ramayan.title"), description: t("work.ramayan.desc"), image: "/k2.png" },
+  { title: t("work.ved.title"), description: t("work.ved.desc"), image: "/k3.png" },
+  { title: t("work.sanskrit.title"), description: t("work.sanskrit.desc"), image: "/k4.png" },
+  { title: t("work.yoga.title"), description: t("work.yoga.desc"), image: "/k5.png" },
+  { title: t("work.ayurveda.title"), description: t("work.ayurveda.desc"), image: "/k6.png" },
+  { title: t("work.sanskar.title"), description: t("work.sanskar.desc"), image: "/k7.png" },
+  { title: t("work.astrology.title"), description: t("work.astrology.desc"), image: "/k8.png" },
+  { title: t("work.vastu.title"), description: t("work.vastu.desc"), image: "/k9.png" },
+  { title: t("work.music.title"), description: t("work.music.desc"), image: "/k10.png" },
+  { title: t("work.art.title"), description: t("work.art.desc"), image: "/k11.png" },
+  { title: t("work.history.title"), description: t("work.history.desc"), image: "/k12.png" },
+  { title: t("work.science.title"), description: t("work.science.desc"), image: "/k13.png" },
+];
+
   ]
 
   return (
@@ -44,12 +47,7 @@ export default function KaryashalaSection() {
               className="group hover:shadow-2xl transition-all duration-300 cursor-pointer border-0 shadow-lg overflow-hidden"
             >
               <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={`/abstract-geometric-shapes.png?height=200&width=300&query=${encodeURIComponent(subject.title + " poster saffron")}`}
-                  alt={subject.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+               
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <CardContent className="p-6">
